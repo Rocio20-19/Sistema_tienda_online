@@ -1,6 +1,7 @@
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -28,6 +29,7 @@ namespace Sistema_tienda_online
             var connection = Configuration.GetConnectionString("DefaultConnection");
             services.AddDbContext<BDTiendaContext>(options => options.UseSqlServer(connection));
             services.AddControllersWithViews();
+            services.AddIdentity<IdentityUser,IdentityRole>().AddEntityFrameworkStores<BDTiendaContext>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

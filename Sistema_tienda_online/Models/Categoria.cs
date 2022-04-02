@@ -1,21 +1,20 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 
 #nullable disable
 
 namespace Sistema_tienda_online.Models
 {
-    public partial class Categorium
+    public  class Categoria
     {
-        public Categorium()
+        public Categoria()
         {
-            Productos = new HashSet<Producto>();
+          
         }
-
+        [Key]
         public int IdCategoria { get; set; }
         public string Nombre { get; set; }
         public string Descripcion { get; set; }
-
-        public virtual ICollection<Producto> Productos { get; set; }
     }
 }

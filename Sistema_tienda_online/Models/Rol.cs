@@ -1,21 +1,20 @@
 ﻿using System;
 using System.Collections.Generic;
 
+using System.ComponentModel.DataAnnotations;
 #nullable disable
 
 namespace Sistema_tienda_online.Models
 {
-    public partial class Rol
+    public class Rol
     {
         public Rol()
-        {
-            Usuarios = new HashSet<Usuario>();
+        {      
         }
-
+        [Key]
         public int IdRol { get; set; }
         public string Nombre { get; set; }
         public string Descripcion { get; set; }
 
-        public virtual ICollection<Usuario> Usuarios { get; set; }
     }
 }

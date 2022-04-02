@@ -1,25 +1,24 @@
 ﻿using System;
 using System.Collections.Generic;
 
+using System.ComponentModel.DataAnnotations;
 #nullable disable
 
 namespace Sistema_tienda_online.Models
 {
-    public partial class Producto
+    public class Producto
     {
         public Producto()
         {
-            Detalles = new HashSet<Detalle>();
+           
         }
-
-        public int IdProducto { get; set; }
+        [Key]
+        public int Id_producto { get; set; }
         public string Codigo { get; set; }
         public string Nombre { get; set; }
-        public decimal? Precio { get; set; }
+        public decimal Precio { get; set; }
         public int? Stock { get; set; }
-        public int? IdCategoria { get; set; }
+        public int Id_categoria { get; set; }
 
-        public virtual Categorium IdCategoriaNavigation { get; set; }
-        public virtual ICollection<Detalle> Detalles { get; set; }
     }
 }

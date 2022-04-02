@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
+using System.ComponentModel.DataAnnotations;
 #nullable disable
 
 namespace Sistema_tienda_online.Models
@@ -9,9 +10,9 @@ namespace Sistema_tienda_online.Models
     {
         public Usuario()
         {
-            Facturas = new HashSet<Factura>();
+            
         }
-
+        [Key]
         public int IdUsuario { get; set; }
         public int? IdRol { get; set; }
         public string Nombre { get; set; }
@@ -21,7 +22,5 @@ namespace Sistema_tienda_online.Models
         public string Telefono { get; set; }
         public string Direccion { get; set; }
 
-        public virtual Rol IdRolNavigation { get; set; }
-        public virtual ICollection<Factura> Facturas { get; set; }
     }
 }
